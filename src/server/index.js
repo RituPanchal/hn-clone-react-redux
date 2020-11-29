@@ -8,6 +8,7 @@ import { StaticRouter } from 'react-router';
 import App from '../client/App';
 
 const app = express();
+const host = '0.0.0.0';
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
@@ -37,6 +38,6 @@ app.get('*', (req, res) => {
     res.send(html);
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, host, () => {
     console.log(`Server listening on ${PORT}`);
 })
