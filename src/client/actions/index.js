@@ -11,10 +11,10 @@ export const dispatchNews = data => ({
     payload: data
 });
 
-export const fetchNews = (counter) => async (dispatch) => {
+export const fetchNews = (start, end) => async (dispatch) => {
     const news = [];
 
-    for (let i = 1; i < 20; i++) {
+    for (let i = start; i < end; i++) {
         await fetch(HN_ITEMS_URL + parseInt(i))
             .then(response => response.json())
             .then(data => {
