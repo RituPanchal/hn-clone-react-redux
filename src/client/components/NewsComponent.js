@@ -81,8 +81,11 @@ class NewsComponent extends React.Component {
 
         for (let i = 0; i < results.length; i++) {
             const id = results[i].id.toString();
-            const votes = results[i].vote_count;
-            console.log(id + " == " + votes);
+
+            const storage_item = localStorage.getItem(id);
+            const parse_storage_item = JSON.parse(storage_item);
+            const vote_count = parse_storage_item != null ? parse_storage_item.vote_count : 0;
+            const votes = vote_count;
 
             const item = { [id]: votes }
             statistics.push(item);
