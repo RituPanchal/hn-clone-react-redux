@@ -131,6 +131,7 @@ class NewsComponent extends React.Component {
         const results = JSON.parse(JSON.stringify(this.props.news)).news;
         return (
             <div className="c-news">
+                <h2>Hacker News Clone</h2>
                 <div className="c-news__wrapper">
                     <table>
                         <colgroup>
