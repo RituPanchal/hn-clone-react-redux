@@ -43,11 +43,16 @@
     "webpack-cli": "^3.3.11",
     "webpack-node-externals": "^1.7.2"
   },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
   "scripts": {
     "webpack:client": "webpack --config webpack.client.js --watch",
     "webpack:server": "webpack --config webpack.server.js --watch",
     "webpack:start": "nodemon --watch build --exec node build/bundle.js",
-    "start": "npm-run-all --parallel webpack:*",
+    "start": "node build/bundle.js",
+    "dev": "npm-run-all --parallel webpack:*",
     "build": "webpack --config webpack.client.js && webpack --config webpack.server.js"
   },
   "eslintConfig": {
